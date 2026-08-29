@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Chapter 7 Workbook v2.0 — Consequences, Care</title>
+<title>Chapter 7 Workbook v2.1 — Consequences, Care</title>
 <meta content="Accessible Chapter 7 workbook rebuilt on the finalized chapter text: the real Authorship Check, Palmer, Farmer, Burden Export, and the process trail." name="description"/>
 <style>
     :root {
@@ -47,6 +47,8 @@
     .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
     label { display:block; font-weight:800; margin:14px 0 6px; color:#2f2a24; }
     .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
+    .response-hint { margin:8px 0 0; padding:10px 12px; background:#f6efe6; border:1px solid #ddccb9; border-left:4px solid var(--accent-dark); border-radius:10px; font-size:.9rem; color:#4a3a2a; }
+    .response-hint strong { color:var(--accent-dark); }
     textarea, select { width:100%; font:inherit; color:var(--ink); background:#fffdf8; border:1px solid #bfb7a8; border-radius:12px; padding:10px 12px; }
     textarea { min-height:94px; resize:vertical; }
     textarea:focus, select:focus, button:focus { outline:3px solid var(--accent-dark); outline-offset:2px; }
@@ -72,7 +74,7 @@
 <header>
   <div class="wrap hero">
     <div class="hero-card">
-      <div class="eyebrow">Chapter 7 Workbook · Consequences, Care · v2.0</div>
+      <div class="eyebrow">Chapter 7 Workbook · Consequences, Care · v2.1</div>
       <h1>Consequences, Care</h1>
       <p class="tagline">The real Authorship Check, <strong>Palmer's ensemble thinking</strong>, <strong>Farmer's burden export</strong>, and a genuine process trail.</p>
       <div class="pill-row">
@@ -95,7 +97,7 @@
     <div class="progress-box">
       <strong>Progress</strong>
       <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText" class="small">0 of 11 required responses completed.</div>
+      <div id="progressText" class="small">0 of 10 required responses completed.</div>
       <ol class="toc">
         <li><a href="#arrive">1. Arrive</a></li>
         <li><a href="#case">2. Two Answers, Both Right</a></li>
@@ -127,6 +129,12 @@
         <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
       </div>
       <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
+      <div class="callout" aria-labelledby="guidance-heading">
+        <h3 id="guidance-heading">Before You Start Typing</h3>
+        <p>The boxes in this workbook are graded responses, not a warm-up. A thin answer restates the obvious. A full answer names something specific and traceable, not a general truth that could apply to almost anything.</p>
+        <p>For example: asked why a cake didn't rise, a thin answer says "the oven wasn't hot enough." A full answer says "the recipe called for baking soda, but the box had expired eight months earlier and no longer produced enough gas to lift the batter." Both are about the same length. Only one of them could actually be checked against what happened.</p>
+        <p>Each prompt below has a short note under it naming the specific shortcut a rushed answer tends to take on that exact question. Read it before you write, not after you get your grade back.</p>
+      </div>
     </section>
 
     <section id="case">
@@ -135,7 +143,8 @@
       <div class="callout">Consequentialism asks what actually happens to real people as a result of a decision. Care ethics asks what a specific relationship, with a specific person's specific need, requires of you right now. The difficulty isn't that one is mistaken — they're answering different questions, and a single decision only lets you act on one answer at a time.</div>
       <label for="case_read">Prompt 2.1 — Name the two pulls</label>
       <p class="hint">Applied to the shift-covering scenario: what does each tradition actually ask, and why aren't you simply confused when you feel both at once?</p>
-      <textarea id="case_read" data-required="true" aria-describedby="case_read_error"></textarea>
+      <p class="response-hint" id="case_read_rhint"><strong>Watch for:</strong> copying back the callout's own definitions of Consequentialism and Care without answering the second half of the question — why feeling both pulls at once isn't confusion or indecision. A full answer explains what's actually happening when two genuinely different questions get asked of the same situation at the same time.</p>
+      <textarea id="case_read" data-required="true" aria-describedby="case_read_error case_read_rhint"></textarea>
       <p class="error-inline" id="case_read_error">This still needs a response.</p>
     </section>
 
@@ -151,7 +160,8 @@
       </div>
       <label for="authorship_which">Prompt 3.1 — Which question matters most, and why?</label>
       <p class="hint">These five aren't a checklist to run every time. Most decisions only need one or two. Which one do you find yourself skipping most often, and what does that tend to cost you?</p>
-      <textarea id="authorship_which" data-required="true" aria-describedby="authorship_which_error"></textarea>
+      <p class="response-hint" id="authorship_which_rhint"><strong>Watch for:</strong> naming a check because it sounds like the responsible answer, rather than the one you're actually, honestly worst at skipping. A full answer names a real, specific cost — an actual outcome you can point to — not a vague "it doesn't go well."</p>
+      <textarea id="authorship_which" data-required="true" aria-describedby="authorship_which_error authorship_which_rhint"></textarea>
       <p class="error-inline" id="authorship_which_error">This still needs a response.</p>
     </section>
 
@@ -161,7 +171,8 @@
       <p>The Capacity Check, done fully, weighs your full ABCD state — Agency, Beauty and Awe, Context and Contingency, Dynamism — against real constraints of time and energy, "all things considered." A meta-cognitive prosthetic, named here for the first time, is a tool built to help a bounded mind do consciously what it can't do by unaided instinct: weigh all four against each other under real limits.</p>
       <label for="capacity_deepened">Prompt 4.1 — Apply it to something real right now</label>
       <p class="hint">Given everything true about your ABCD state right now, what is actually the wisest use of your next hour of real capacity?</p>
-      <textarea id="capacity_deepened" data-required="true" aria-describedby="capacity_deepened_error"></textarea>
+      <p class="response-hint" id="capacity_deepened_rhint"><strong>Watch for:</strong> naming a task just because it's due or overdue, without actually weighing it against your real current state — your energy, your context, whether this hour genuinely suits that kind of work. A full answer shows the weighing itself, not just the conclusion it landed on.</p>
+      <textarea id="capacity_deepened" data-required="true" aria-describedby="capacity_deepened_error capacity_deepened_rhint"></textarea>
       <p class="error-inline" id="capacity_deepened_error">This still needs a response.</p>
     </section>
 
@@ -173,7 +184,8 @@
       </div>
       <label for="palmer_apply">Prompt 5.1 — Why is false certainty a moral choice?</label>
       <p class="hint">Why does presenting a single-track forecast as certain count as a moral choice, not just a neutral technical shortcut?</p>
-      <textarea id="palmer_apply" data-required="true" aria-describedby="palmer_apply_error"></textarea>
+      <p class="response-hint" id="palmer_apply_rhint"><strong>Watch for:</strong> saying "because it could be wrong" — every forecast could be wrong, so that alone doesn't make the choice moral rather than technical. A full answer names what the person receiving the flattened forecast loses the ability to do, and why that loss carries real consequences for them.</p>
+      <textarea id="palmer_apply" data-required="true" aria-describedby="palmer_apply_error palmer_apply_rhint"></textarea>
       <p class="error-inline" id="palmer_apply_error">This still needs a response.</p>
     </section>
 
@@ -186,7 +198,8 @@
       <div class="callout"><strong>Burden Export:</strong> what happens when a system becomes more efficient specifically by transferring its own cost onto people it does not track — often a sign of success by the system's own metrics, not failure.</div>
       <label for="farmer_apply">Prompt 6.1 — Find a real example of Burden Export</label>
       <p class="hint">Name a real or plausible case where something looks efficient specifically because its real cost has been pushed onto people the accounting doesn't track.</p>
-      <textarea id="farmer_apply" data-required="true" aria-describedby="farmer_apply_error"></textarea>
+      <p class="response-hint" id="farmer_apply_rhint"><strong>Watch for:</strong> naming something you simply think is unfair, without showing the specific mechanism — a metric that looks good precisely because the people paying the real cost aren't in the data it measures. A full answer names both the metric that looks efficient and who falls outside what it counts.</p>
+      <textarea id="farmer_apply" data-required="true" aria-describedby="farmer_apply_error farmer_apply_rhint"></textarea>
       <p class="error-inline" id="farmer_apply_error">This still needs a response.</p>
     </section>
 
@@ -198,7 +211,8 @@
         <p>Recall a real decision where consequences and care genuinely pulled in different directions, the way the shift-covering scene does. Write your honest first reaction to which one you leaned toward, before reasoning it through. Once you move on, don't come back and revise this.</p>
       </div>
       <label for="moment_first">Prompt 7.1 — Your moment and first reaction</label>
-      <textarea id="moment_first" data-required="true" aria-describedby="moment_first_error"></textarea>
+      <p class="response-hint" id="moment_first_rhint"><strong>Watch for:</strong> describing a decision where you clearly only ever felt one pull, rather than a moment where consequences and care genuinely pulled you in different directions. And if you've already justified your choice, that's not a first reaction — write which way you leaned before you defend it.</p>
+      <textarea id="moment_first" data-required="true" aria-describedby="moment_first_error moment_first_rhint"></textarea>
       <p class="error-inline" id="moment_first_error">This still needs a response.</p>
     </section>
 
@@ -207,7 +221,8 @@
       <h2>Apply it to your own moment</h2>
       <label for="apply_check">Prompt 8.1 — Run the Weight Check and the Gut Check</label>
       <p class="hint">On the moment you named: how much did this decision actually matter, at the scale it actually operated at — and did your gut agree with your reasoning, or disagree?</p>
-      <textarea id="apply_check" data-required="true" aria-describedby="apply_check_error"></textarea>
+      <p class="response-hint" id="apply_check_rhint"><strong>Watch for:</strong> answering only one of the two checks — usually the Weight Check — and skipping whether your gut actually agreed with your reasoning at the time. A full answer addresses both, even if the honest answer is that they disagreed.</p>
+      <textarea id="apply_check" data-required="true" aria-describedby="apply_check_error apply_check_rhint"></textarea>
       <p class="error-inline" id="apply_check_error">This still needs a response.</p>
     </section>
 
@@ -219,7 +234,8 @@
         <p>Looking back, do you think you acted on the right pull? What would the Weight Check have told you about how much this decision actually mattered?</p>
       </div>
       <label for="moment_final">Prompt 9.1 — Your final answer</label>
-      <textarea id="moment_final" data-required="true" aria-describedby="moment_final_error"></textarea>
+      <p class="response-hint" id="moment_final_rhint"><strong>Watch for:</strong> answering with how you feel about your choice now — good or bad — instead of what the Weight Check specifically would have told you about scale. A full answer runs that check rather than substituting a feeling for it.</p>
+      <textarea id="moment_final" data-required="true" aria-describedby="moment_final_error moment_final_rhint"></textarea>
       <p class="error-inline" id="moment_final_error">This still needs a response.</p>
     </section>
 
@@ -228,7 +244,8 @@
       <h2>What actually changed?</h2>
       <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
       <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
-      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error"></textarea>
+      <p class="response-hint" id="revision_check_rhint"><strong>Watch for:</strong> writing "nothing changed" and stopping there. That's an allowed outcome, but only when you explain specifically why your first reaction survived being tested against the Authorship Check, not just assert that it did.</p>
+      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error revision_check_rhint"></textarea>
       <p class="error-inline" id="revision_check_error">This still needs a response.</p>
       <div class="checkline">
         <input type="checkbox" id="journalRef">
@@ -255,7 +272,7 @@
     </section>
   </main>
 </div>
-<footer>Chapter 7 Workbook v2.0 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
+<footer>Chapter 7 Workbook v2.1 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
 <script>
 (function() {
   'use strict';
@@ -347,7 +364,7 @@
   }
   function worksheetText() {
     return [
-      'Chapter 7 Workbook Worksheet v2.0 — Consequences, Care',
+      'Chapter 7 Workbook Worksheet v2.1 — Consequences, Care',
       '',
       'The shift-covering scene: a friend asks you to cover a shift so they can go to a family event.',
       '',
