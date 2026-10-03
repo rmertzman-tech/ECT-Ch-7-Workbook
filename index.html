@@ -1,424 +1,1230 @@
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Chapter 7 Workbook v2.1 — Consequences, Care</title>
-<meta content="Accessible Chapter 7 workbook rebuilt on the finalized chapter text: the real Authorship Check, Palmer, Farmer, Burden Export, and the process trail." name="description"/>
-<style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ECT Chapter 7 v3 — Doing, Consequences & Care Class Lab</title>
+    <meta name="description" content="One-class interactive Chapter 7 lab: Consequentialism, Care, Palmer ensemble thinking, Farmer heterogeneity, Doing, licensing, and REOPEN.">
+    <style>
     :root {
-      --bg:#f7f5ef; --panel:#ffffff; --ink:#24211c; --muted:#625c52; --line:#ded7ca;
-      --accent:#6d5640; --accent-dark:#493526; --accent-soft:#f3ebe1;
-      --danger:#7a3b2e; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(45,39,30,0.10); --radius:18px;
+        --bg: #f7f5ef;
+        --panel: #fffdfa;
+        --ink: #24211c;
+        --muted: #655f56;
+        --line: #d9d1c4;
+        --accent: #5b4f7a;
+        --accent2: #365f6d;
+        --warm: #fff5df;
+        --soft: #eef3f4;
+        --soft2: #f1edf7;
+        --good: #edf7ec;
+        --danger: #7a3b2e;
+        --shadow: 0 10px 26px rgba(40, 35, 28, .08)
     }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f7f5ef 0%,#eee4d8 100%); line-height:1.55; }
-    header { background:radial-gradient(circle at top left,#faf4ec,#eee2d5 55%,#dbc8b2 100%); border-bottom:1px solid #cdb9a4; padding:28px 18px; }
-    .wrap { max-width:1120px; margin:0 auto; }
-    .hero { display:grid; grid-template-columns:1.6fr 0.9fr; gap:20px; align-items:stretch; }
-    .hero-card, .side-card, section { background:rgba(255,255,255,0.94); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
-    .hero-card { padding:26px; } .side-card { padding:20px; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; font-weight:800; color:var(--accent-dark); }
-    h1 { margin:8px 0 10px; font-size:clamp(2rem,4vw,3.3rem); line-height:1.05; }
-    h2 { margin-top:0; color:var(--accent-dark); font-size:1.55rem; }
-    h3 { color:var(--accent-dark); margin-bottom:8px; }
-    p { margin-top:0; }
-    .tagline { font-size:1.15rem; color:#373228; max-width:820px; }
-    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .pill { display:inline-flex; align-items:center; gap:6px; border:1px solid #c8b39c; border-radius:999px; padding:6px 10px; background:#fff8ef; font-size:.88rem; color:var(--accent-dark); font-weight:650; }
-    .grid { display:grid; grid-template-columns:260px 1fr; gap:18px; margin-top:18px; }
-    nav { position:sticky; top:12px; align-self:start; }
-    .progress-box { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
-    .bar { height:12px; background:#e5dfd2; border-radius:999px; overflow:hidden; margin:8px 0; }
-    .bar > div { height:100%; width:0%; background:var(--accent); transition:width 200ms ease; }
-    .toc { list-style:none; padding:0; margin:10px 0 0; }
-    .toc li { margin:6px 0; }
-    .toc a { color:var(--accent-dark); text-decoration:none; font-weight:700; font-size:.93rem; }
-    .toc a:hover, .toc a:focus { text-decoration:underline; }
-    main { display:grid; gap:18px; }
-    section { padding:22px; }
-    .section-kicker { color:var(--muted); font-weight:750; margin-bottom:6px; }
-    .callout, .warning, .success, .casebox, .stop-box { border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:14px 0; }
-    .callout { background:var(--accent-soft); border-left:5px solid var(--accent); border-color:var(--line); }
-    .warning { background:#fff5df; border-left:5px solid #7a4f00; border-color:#e9d6a6; }
-    .success { background:var(--good-bg); border-left:5px solid #4d7e46; border-color:#c9e0c4; }
-    .casebox { background:#fffaf0; border-color:#d5cdbc; }
-    .stop-box { background:#fff0ee; border:2px solid var(--danger); }
-    .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
-    label { display:block; font-weight:800; margin:14px 0 6px; color:#2f2a24; }
-    .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
-    .response-hint { margin:8px 0 0; padding:10px 12px; background:#f6efe6; border:1px solid #ddccb9; border-left:4px solid var(--accent-dark); border-radius:10px; font-size:.9rem; color:#4a3a2a; }
-    .response-hint strong { color:var(--accent-dark); }
-    textarea, select { width:100%; font:inherit; color:var(--ink); background:#fffdf8; border:1px solid #bfb7a8; border-radius:12px; padding:10px 12px; }
-    textarea { min-height:94px; resize:vertical; }
-    textarea:focus, select:focus, button:focus { outline:3px solid var(--accent-dark); outline-offset:2px; }
-    textarea[aria-invalid="true"], select[aria-invalid="true"] { border-color:var(--danger); background:#fff7f5; }
-    .checkline { display:flex; gap:10px; align-items:flex-start; margin:12px 0; padding:12px; background:#fff8ef; border:1px solid #c8b39c; border-radius:12px; }
-    .checkline input { margin-top:5px; }
-    .zero-credit { display:block; margin-top:4px; color:var(--muted); font-weight:500; font-size:.88rem; }
-    .buttons { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    button { border:1px solid var(--accent-dark); border-radius:999px; background:var(--accent); color:#fff; padding:10px 14px; font:inherit; font-weight:800; cursor:pointer; }
-    button.secondary { background:#fffdf8; color:var(--accent-dark); }
-    button.danger { background:var(--danger); border-color:#5d2a20; }
-    button:hover { filter:brightness(0.97); }
-    .small { font-size:.9rem; color:var(--muted); }
-    .error-inline { display:none; margin-top:6px; color:var(--danger); font-weight:700; font-size:.92rem; }
-    .error-summary { display:none; background:#fff5f3; border:2px solid var(--danger); border-radius:14px; padding:14px 16px; margin:14px 0; }
-    .error-summary h3 { color:var(--danger); margin-bottom:6px; }
-    #outputText { min-height:340px; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9rem; }
-    footer { padding:24px 18px 40px; color:var(--muted); text-align:center; }
-    @media (max-width:860px) { .hero,.grid { grid-template-columns:1fr; } nav { position:static; } }
-  </style>
+
+    * {
+        box-sizing:border-box
+    }
+
+    html {
+        scroll-behavior:smooth
+    }
+
+    body {
+        margin: 0;
+        font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: linear-gradient(#f8f6f0, #ece9f1)
+    }
+
+    a {
+        color:#354f66
+    }
+
+    button, textarea, select, input {
+        font:inherit
+    }
+
+    button:focus, textarea:focus, select:focus, input:focus, summary:focus, a:focus {
+        outline: 3px solid #27203f;
+        outline-offset: 2px
+    }
+
+    .wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding:0 18px
+    }
+
+    header {
+        border-bottom: 1px solid var(--line);
+        background:linear-gradient(135deg, #eef4f5, #f4eee7)
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1.55fr .85fr;
+        gap: 18px;
+        padding-top: 24px;
+        padding-bottom: 22px
+    }
+
+    .card, section, nav {
+        background: rgba(255, 253, 250, .98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow:var(--shadow)
+    }
+
+    .card, section {
+        padding:22px
+    }
+
+    .eyebrow, .kicker, .phase {
+        font-weight: 850;
+        text-transform: uppercase;
+        letter-spacing:.065em
+    }
+
+    .eyebrow, .kicker {
+        font-size: .78rem;
+        color:#3f3557
+    }
+
+    .phase {
+        font-size: .75rem;
+        display: inline-block;
+        background: var(--soft2);
+        color: #43375e;
+        border-radius: 999px;
+        padding: 4px 9px;
+        margin-bottom: 8px
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 3.15rem);
+        line-height: 1.05;
+        margin:8px 0
+    }
+
+    h2, h3 {
+        color:#3f3557
+    }
+
+    .tagline {
+        font-size:1.08rem
+    }
+
+    .pill {
+        display: inline-block;
+        border: 1px solid #c9bfd7;
+        background: #fbf9ff;
+        border-radius: 999px;
+        padding: 5px 9px;
+        margin: 3px;
+        font-size: .84rem;
+        font-weight: 760
+    }
+
+    .layout {
+        display: grid;
+        grid-template-columns: 270px 1fr;
+        gap: 18px;
+        padding-top: 18px;
+        padding-bottom:32px
+    }
+
+    nav {
+        padding: 16px;
+        position: sticky;
+        top: 10px;
+        align-self: start;
+        max-height: calc(100vh - 20px);
+        overflow:auto
+    }
+
+    .toc {
+        list-style: none;
+        padding:0
+    }
+
+    .toc li {
+        margin:7px 0
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: #3f3557;
+        font-weight: 760;
+        font-size: .91rem
+    }
+
+    .bar {
+        height: 11px;
+        border-radius: 99px;
+        background: #e5ded1;
+        overflow:hidden
+    }
+
+    .bar div {
+        height: 100%;
+        width: 0;
+        background:var(--accent)
+    }
+
+    .small {
+        font-size: .9rem;
+        color:var(--muted)
+    }
+
+    label {
+        display: block;
+        font-weight: 780;
+        margin:13px 0 5px
+    }
+
+    textarea, select, input[type=text] {
+        width: 100%;
+        padding: 9px 11px;
+        border: 1px solid #bdb5a7;
+        border-radius: 11px;
+        background:#fff
+    }
+
+    textarea {
+        min-height: 84px;
+        resize: vertical
+    }
+
+    .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:14px
+    }
+
+    .three {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:12px
+    }
+
+    .case, .callout, .warning, .success, .snapshot, .board, .modebox, .firewall, .doing {
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 14px;
+        margin:13px 0
+    }
+
+    .case {
+        background:#fff9ee
+    }
+
+    .callout {
+        background: var(--soft);
+        border-left:5px solid var(--accent2)
+    }
+
+    .warning {
+        background: var(--warm);
+        border-left:5px solid #8a5f00
+    }
+
+    .success {
+        background: var(--good);
+        border-left:5px solid #4c7c46
+    }
+
+    .snapshot {
+        background: #f6f2ea;
+        border-style: dashed;
+        white-space: pre-wrap;
+        font:14px/1.45 ui-monospace, monospace
+    }
+
+    .board {
+        background: #f0edf7;
+        border-left:5px solid var(--accent)
+    }
+
+    .firewall {
+        background: #fff0ee;
+        border-left:5px solid var(--danger)
+    }
+
+    .doing {
+        background: #eef5ef;
+        border-left: 5px solid #53744d
+    }
+
+    .buttons {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top:14px
+    }
+
+    button {
+        font: inherit;
+        font-weight: 800;
+        border: 1px solid #3f3557;
+        background: var(--accent);
+        color: white;
+        border-radius: 999px;
+        padding: 9px 14px;
+        cursor: pointer;
+        min-height:44px
+    }
+
+    button.secondary {
+        background: white;
+        color:#3f3557
+    }
+
+    button.danger {
+        background: var(--danger);
+        border-color:var(--danger)
+    }
+
+    button:disabled {
+        opacity: .55;
+        cursor: not-allowed
+    }
+
+    .unlock {
+        border: 1px solid #cfc7d9;
+        border-radius: 14px;
+        background: #fff;
+        overflow: hidden;
+        margin:14px 0
+    }
+
+    .unlock summary {
+        cursor: pointer;
+        padding: 14px 16px;
+        font-weight: 850;
+        color: #43375e;
+        background:#f4f0f8
+    }
+
+    .unlock .inside {
+        padding:0 16px 16px
+    }
+
+    .pause {
+        font-size: .82rem;
+        font-weight: 800;
+        color: #6b5210;
+        background: #fff2cb;
+        display: inline-block;
+        border-radius: 999px;
+        padding: 3px 8px;
+        margin-top: 10px
+    }
+
+    .ensemble {
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        gap: 5px;
+        margin:13px 0
+    }
+
+    .run {
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 9px 4px;
+        text-align: center;
+        font-weight: 800;
+        font-size: .78rem;
+        background:#f6f3ec
+    }
+
+    .run.low {
+        background:#edf7ec
+    }
+
+    .run.mid {
+        background:#fff4da
+    }
+
+    .run.high {
+        background:#fff0ee
+    }
+
+    .profile {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        background: #fff;
+        margin:8px 0
+    }
+
+    .matrix {
+        width: 100%;
+        border-collapse: collapse;
+        margin:12px 0
+    }
+
+    .matrix th, .matrix td {
+        border: 1px solid var(--line);
+        padding: 8px;
+        vertical-align: top;
+        text-align:left
+    }
+
+    .matrix th {
+        background:#f2eef7
+    }
+
+    .move {
+        display: inline-block;
+        border: 1px solid #bdb5a7;
+        border-radius: 999px;
+        padding: 5px 9px;
+        font-weight: 800;
+        margin: 3px;
+        background:#fff
+    }
+
+    .hidden {
+        display:none !important
+    }
+
+    .output {
+        min-height: 330px;
+        font:13.5px/1.45 ui-monospace, monospace
+    }
+
+    .status {
+        font-weight: 760;
+        color:#3f3557
+    }
+
+    .check {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        padding: 8px 10px;
+        border: 1px solid #d8d0c4;
+        border-radius: 10px;
+        background: #fbfaf6;
+        margin:7px 0
+    }
+
+    .check input {
+        margin-top:5px
+    }
+
+    .stepnum {
+        font-size: 2.2rem;
+        line-height: 1;
+        font-weight: 900;
+        color: #c8bfd7;
+        float:right
+    }
+
+    .role {
+        padding: 10px;
+        border: 1px solid #d8d0c4;
+        border-radius: 10px;
+        background:#fffdf8
+    }
+
+    .error {
+        color: var(--danger);
+        font-weight:750
+    }
+
+    .instructor-strip {
+        border: 2px dashed #7c6c9e;
+        background: #faf7ff;
+        border-radius: 13px;
+        padding: 12px;
+        margin:12px 0
+    }
+
+    footer {
+        text-align: center;
+        color: var(--muted);
+        padding: 22px
+    }
+
+    @media (max-width: 900px) {
+        .hero, .layout, .two, .three {
+            grid-template-columns:1fr
+        }
+
+        nav {
+            position: static;
+            max-height:none
+        }
+
+        .ensemble {
+            grid-template-columns: repeat(5, 1fr)
+        }
+    }
+
+    @media (max-width: 520px) {
+        .ensemble {
+            grid-template-columns:repeat(2, 1fr)
+        }
+
+        section, .card {
+            padding: 16px
+        }
+    }
+
+    @media print {
+        nav, .buttons, .modebox, .instructor-strip {
+            display:none !important
+        }
+
+        body {
+            background:white
+        }
+
+        .card, section {
+            box-shadow: none
+        }
+    }
+    </style>
 </head>
 <body>
-<header>
-  <div class="wrap hero">
-    <div class="hero-card">
-      <div class="eyebrow">Chapter 7 Workbook · Consequences, Care · v2.1</div>
-      <h1>Consequences, Care</h1>
-      <p class="tagline">The real Authorship Check, <strong>Palmer's ensemble thinking</strong>, <strong>Farmer's burden export</strong>, and a genuine process trail.</p>
-      <div class="pill-row">
-        <span class="pill">The Authorship Check</span>
-        <span class="pill">Tim Palmer</span>
-        <span class="pill">Doyne Farmer</span>
-        <span class="pill">Burden Export</span>
-      </div>
+    <header>
+        <div class="wrap hero">
+            <div class="card">
+                <div class="eyebrow">Ethics & Critical Thinking · Unit 3 · Chapter 7 · One-Class Conversation Lab</div>
+                <h1>Consequences, Care, and the Maps We Can Now Compute</h1>
+                <p class="tagline">
+                    <strong>Build the task → preserve your first map → expand consequences computationally → restore situated people and relationships → license the move from forecast to action → return as author.</strong>
+                </p>
+                <span class="pill">Consequentialism</span>
+                <span class="pill">Care ethics</span>
+                <span class="pill">Palmer / ensembles</span>
+                <span class="pill">Farmer / heterogeneous agents</span>
+                <span class="pill">Doing</span>
+                <span class="pill">EHI licensing</span>
+                <span class="pill">REOPEN</span>
+            </div>
+            <div class="card">
+                <h2>One class, two paths</h2>
+                <p>
+                    <strong>Live class:</strong>
+                     start alone, then work in groups of 3–4 through the staged reveals. Keep disagreement visible.
+                </p>
+                <p>
+                    <strong>Individual/self-paced:</strong>
+                     use the same sequence, but construct the strongest countermap yourself.
+                </p>
+                <p class="small">Suggested class: 65–75 minutes. The app is local-only and uses a fictional campus case; no personal disclosure is required.</p>
+            </div>
+        </div>
+    </header>
+    <div class="wrap layout">
+        <nav aria-label="Chapter 7 class lab navigation">
+            <strong>Session setup</strong>
+            <label for="workMode">How are you working?</label>
+            <select id="workMode">
+                <option value="group">Pair / group (2–4)</option>
+                <option value="individual">Individual / self-paced</option>
+            </select>
+            <div class="modebox small" id="modeNote"></div>
+            <strong>Progress</strong>
+            <div class="bar" aria-hidden="true">
+                <div id="barFill"></div>
+            </div>
+            <div class="small" id="progressText"></div>
+            <div class="warning" id="mapAStatus">Map A not yet preserved</div>
+            <ol class="toc">
+                <li>
+                    <a href="#orient">0. ORIENT — What kind of problem?</a>
+                </li>
+                <li>
+                    <a href="#enter">1. ENTER — Map A</a>
+                </li>
+                <li>
+                    <a href="#task">2. BUILD THE TASK</a>
+                </li>
+                <li>
+                    <a href="#palmer">3. PALMER — Expand uncertainty</a>
+                </li>
+                <li>
+                    <a href="#farmer">4. FARMER — Expand the people</a>
+                </li>
+                <li>
+                    <a href="#care">5. CARE — Restore relations</a>
+                </li>
+                <li>
+                    <a href="#license">6. LICENSE — Firewall</a>
+                </li>
+                <li>
+                    <a href="#return">7. RETURN — Map B</a>
+                </li>
+                <li>
+                    <a href="#transfer">8. TRANSFER</a>
+                </li>
+                <li>
+                    <a href="#close">9. CARRY FORWARD</a>
+                </li>
+            </ol>
+            <div class="buttons">
+                <button class="secondary" id="saveBtn">Save</button>
+                <button class="danger" id="clearBtn">Clear local work</button>
+            </div>
+        </nav>
+        <main>
+            <section id="orient">
+                <span class="stepnum">0</span>
+                <div class="phase">Instructor opening · 4–6 min</div>
+                <div class="kicker">ORIENT — Chapter 7 after the reading</div>
+                <h2>What changes when we can compute more of the consequences?</h2>
+                <p>
+                    You already know the simple Chapter 7 task: 
+                    <strong>Consequentialism</strong>
+                     asks what follows from an action; 
+                    <strong>Care ethics</strong>
+                     asks what responsibilities arise within concrete relationships and dependencies. Today we add a complication: modern computational tools can show us more possible futures and more kinds of affected people than unaided intuition can hold at once.
+                </p>
+                <div class="doing">
+                    <strong>Doing language:</strong>
+                     a person is not a number waiting to receive an outcome. Each person is in an unfolding 
+                    <em>Doing</em>
+                    : assembled from a history, acting with present capacities and constraints, and facing a field of possible next steps. A consequence matters partly because it can open, narrow, redirect, or damage those future arcs.
+                </div>
+                <div class="firewall">
+                    <strong>Today's critical-thinking question:</strong>
+                     computation can expand a map. It does not automatically tell us what to recommend or who is authorized to decide. 
+                    <strong>Forecast ≠ Recommendation ≠ Authorization.</strong>
+                </div>
+                <div class="instructor-strip">
+                    <strong>Instructor move:</strong>
+                     Ask: “If a computer could predict every consequence perfectly, would that settle the ethical decision?” Take 2–3 responses without resolving them yet.
+                </div>
+            </section>
+
+            <section id="enter">
+                <span class="stepnum">1</span>
+                <div class="phase">Individual first · 5 min</div>
+                <div class="kicker">ENTER — The Storm Decision</div>
+                <h2>Preserve your first map before the models get better</h2>
+                <div class="case">
+                    <p>A community college must decide by 6:00 p.m. whether to change tomorrow's operations because a severe storm may affect the region. Closing too early can disrupt classes, labs, work schedules, childcare, and pay. Staying fully open can expose students and employees to unsafe travel if conditions worsen.</p>
+                    <p>
+                        The administration initially receives one headline forecast: 
+                        <strong>“There is a 40% chance of serious local impacts tomorrow.”</strong>
+                    </p>
+                    <p>For now, assume you know nothing else.</p>
+                </div>
+                <label for="a_decision">Your first recommendation</label>
+                <select id="a_decision" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>Remain fully open</option>
+                    <option>Close campus</option>
+                    <option>Shift most activity remote / flexible</option>
+                    <option>Delay the decision</option>
+                    <option>Not enough information yet</option>
+                </select>
+                <label for="a_reason">Strongest reason for that recommendation</label>
+                <textarea id="a_reason" data-required="true"></textarea>
+                <div class="two">
+                    <div>
+                        <label for="a_consequence">Which consequence is most salient to you first?</label>
+                        <textarea id="a_consequence" data-required="true"></textarea>
+                    </div>
+                    <div>
+                        <label for="a_care">Whose concrete need or relationship is most salient to you first?</label>
+                        <textarea id="a_care" data-required="true"></textarea>
+                    </div>
+                </div>
+                <label for="a_unknown">What do you most need to know before becoming more confident?</label>
+                <textarea id="a_unknown" data-required="true"></textarea>
+                <div class="buttons">
+                    <button id="sealBtn">Preserve Map A</button>
+                    <button class="secondary" id="unsealBtn">Reset Map A for technical error</button>
+                </div>
+                <div id="snapshotA" class="snapshot hidden"></div>
+            </section>
+
+            <section id="task">
+                <span class="stepnum">2</span>
+                <div class="phase">Talk / countermap · 7 min</div>
+                <div class="kicker">BUILD THE TASK — Before optimizing</div>
+                <h2>What are we actually trying to do?</h2>
+                <div class="board">
+                    <strong>EHI task-building rule:</strong>
+                     a model can optimize the wrong task extremely well. Before asking “What should the college do?” define the task precisely enough that success and failure can be inspected.
+                </div>
+                <div class="three">
+                    <div class="role">
+                        <strong>Mapper</strong>
+                        <br>
+                        <span class="small">State the task and what counts as success.</span>
+                    </div>
+                    <div class="role">
+                        <strong>Challenger</strong>
+                        <br>
+                        <span class="small">Find what the task definition leaves outside.</span>
+                    </div>
+                    <div class="role">
+                        <strong>License-keeper</strong>
+                        <br>
+                        <span class="small">Flag any conclusion that outruns the evidence.</span>
+                    </div>
+                </div>
+                <p class="small" id="roleNote"></p>
+                <label for="task_bad">A tempting but too-thin task definition</label>
+                <textarea id="task_bad" data-required="true" placeholder="Example form: minimize cancellations..."></textarea>
+                <label for="task_better">Build a better task: what must the decision protect or preserve?</label>
+                <textarea id="task_better" data-required="true"></textarea>
+                <label for="task_missing">What might still be missing from even that better task?</label>
+                <textarea id="task_missing" data-required="true"></textarea>
+                <div class="instructor-strip">
+                    <strong>Whole-class harvest:</strong>
+                     Put 3–4 task definitions on the board. Ask which one a powerful forecasting system should optimize. Do not choose a winner yet.
+                </div>
+            </section>
+
+            <section id="palmer">
+                <span class="stepnum">3</span>
+                <div class="phase">Instructor unlock 1 · 10 min</div>
+                <div class="kicker">PALMER — Computation expands uncertainty</div>
+                <h2>One forecast is not the same thing as the shape of the possibilities</h2>
+                <p>
+                    Tim Palmer's ensemble approach is useful here because it replaces one confident-looking trajectory with many model runs that begin from slightly different plausible conditions. Modern computation makes it practical to inspect a 
+                    <strong>distribution of possible futures</strong>
+                     rather than hide uncertainty inside one headline number.
+                </p>
+                <div class="warning">
+                    <strong>Illustrative classroom ensemble — not a real weather forecast.</strong>
+                     Ten simplified runs of tomorrow's local impact:
+                </div>
+                <div class="ensemble" aria-label="Illustrative ensemble of ten runs">
+                    <div class="run low">
+                        1
+                        <br>
+                        LOW
+                    </div>
+                    <div class="run low">
+                        2
+                        <br>
+                        LOW
+                    </div>
+                    <div class="run mid">
+                        3
+                        <br>
+                        MOD
+                    </div>
+                    <div class="run low">
+                        4
+                        <br>
+                        LOW
+                    </div>
+                    <div class="run high">
+                        5
+                        <br>
+                        HIGH
+                    </div>
+                    <div class="run mid">
+                        6
+                        <br>
+                        MOD
+                    </div>
+                    <div class="run high">
+                        7
+                        <br>
+                        HIGH
+                    </div>
+                    <div class="run low">
+                        8
+                        <br>
+                        LOW
+                    </div>
+                    <div class="run mid">
+                        9
+                        <br>
+                        MOD
+                    </div>
+                    <div class="run high">
+                        10
+                        <br>
+                        HIGH
+                    </div>
+                </div>
+                <p>
+                    <strong>4 low-impact runs · 3 moderate · 3 high-impact.</strong>
+                     The point is not that this distribution is “the answer.” The point is that the map now contains multiple plausible trajectories and their spread.
+                </p>
+                <label for="palmer_gain">What can the ensemble show that the single “40%” headline hid?</label>
+                <textarea id="palmer_gain" data-required="true"></textarea>
+                <label for="palmer_limit">What can the ensemble still not decide for us?</label>
+                <textarea id="palmer_limit" data-required="true"></textarea>
+                <label for="palmer_move">After seeing the ensemble, what happens to your position?</label>
+                <select id="palmer_move" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>HOLD — same recommendation, similar confidence</option>
+                    <option>QUALIFY — same recommendation, but narrower/conditional</option>
+                    <option>CHANGE — a different recommendation now looks better</option>
+                    <option>SUSPEND — I need another kind of information first</option>
+                </select>
+                <div class="callout">
+                    <strong>Consequentialist enhancement:</strong>
+                     computation can widen the consequence map from “what I expect” to a structured range of plausible outcomes. But expected outcomes remain sensitive to what we count, how we model, and which consequences the task definition includes.
+                </div>
+            </section>
+
+            <section id="farmer">
+                <span class="stepnum">4</span>
+                <div class="phase">Instructor unlock 2 · 10 min</div>
+                <div class="kicker">FARMER — Computation expands the people in the map</div>
+                <h2>The average student is not any actual student</h2>
+                <p>
+                    Doyne Farmer's work is a useful comparator because computational models can represent 
+                    <strong>heterogeneous agents</strong>
+                     rather than compress a population into one “representative” person. That lets us ask not only “What is the average consequence?” but “How do different situated agents carry different consequences?”
+                </p>
+                <table class="matrix">
+                    <thead>
+                        <tr>
+                            <th>Situated Doing</th>
+                            <th>If campus stays open</th>
+                            <th>If campus closes / shifts remote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Janelle</strong>
+                                 — works hourly on campus and needs the paycheck
+                            </td>
+                            <td>Income preserved; travel risk may rise</td>
+                            <td>Safer travel; possible lost pay</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Mateo</strong>
+                                 — uses paratransit and has limited route flexibility
+                            </td>
+                            <td>Transportation may become unreliable before general travel looks dangerous</td>
+                            <td>Remote access may preserve participation if technology works</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Rina</strong>
+                                 — student parent using campus childcare
+                            </td>
+                            <td>Childcare remains available; travel risk applies to child too</td>
+                            <td>Childcare disappears; may lose work or class time</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Devon</strong>
+                                 — has a required lab that is difficult to reproduce remotely
+                            </td>
+                            <td>Academic progress preserved</td>
+                            <td>Lab delay may create downstream scheduling costs</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Professor Lee</strong>
+                                 — commuting from a flood-prone area
+                            </td>
+                            <td>May face risk different from campus conditions</td>
+                            <td>Needs a workable way to teach and support students remotely</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <label for="farmer_hidden">What disappears if we replace these people with one “representative student”?</label>
+                <textarea id="farmer_hidden" data-required="true"></textarea>
+                <label for="farmer_burden">
+                    Identify one possible 
+                    <strong>burden export</strong>
+                    : a policy can look successful by its main metric while shifting a cost onto people the metric does not track.
+                </label>
+                <textarea id="farmer_burden" data-required="true"></textarea>
+                <label for="farmer_move">After restoring heterogeneous agents, what happens to your position?</label>
+                <select id="farmer_move" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>HOLD</option>
+                    <option>QUALIFY</option>
+                    <option>CHANGE</option>
+                    <option>SUSPEND</option>
+                </select>
+                <div class="callout">
+                    <strong>Consequentialist enhancement:</strong>
+                     better computation can expose distribution, variance, and burden export—not just totals. A policy with a good average can still reshape particular people's Doings very differently.
+                </div>
+            </section>
+
+            <section id="care">
+                <span class="stepnum">5</span>
+                <div class="phase">Conversation · 8 min</div>
+                <div class="kicker">CARE — What does the consequence map still not contain?</div>
+                <h2>A relationship is not merely another variable</h2>
+                <p>Care ethics does not simply add “one more consequence” to the total. It can change the ethical question by making dependency, responsiveness, vulnerability, history, and responsibility between particular people morally salient.</p>
+                <div class="case">
+                    <p>Now add this: the college has repeatedly told students, faculty, and staff that safety decisions will not punish people for circumstances beyond their control. Several instructors also know individual students whose transportation, health, caregiving, or disability situations make a uniform rule especially costly.</p>
+                </div>
+                <label for="care_relation">What relationship or responsibility becomes visible here that a consequence total could underdescribe?</label>
+                <textarea id="care_relation" data-required="true"></textarea>
+                <label for="care_conflict">Name a genuine Consequentialism–Care conflict in this case. Do not make one side obviously foolish.</label>
+                <textarea id="care_conflict" data-required="true"></textarea>
+                <label for="care_invariant">What should remain protected whichever operational option the college chooses?</label>
+                <textarea id="care_invariant" data-required="true"></textarea>
+                <div class="doing">
+                    <strong>Doing interpretation:</strong>
+                     care asks whether our action keeps another person's Doing intelligible and possible—not whether we can guarantee their preferred outcome, but whether we recognize the dependencies and standing that make their situation more than a row in an optimization table.
+                </div>
+            </section>
+
+            <section id="license">
+                <span class="stepnum">6</span>
+                <div class="phase">Whole-class licensing board · 8 min</div>
+                <div class="kicker">EHI — Where does the arrow need a bridge?</div>
+                <h2>Forecast ≠ recommendation ≠ authorization</h2>
+                <div class="firewall">
+                    <strong>Motivated firewall:</strong>
+                     a good forecast can support a recommendation, but it cannot by itself supply the values, standing, tradeoffs, or legitimate authority needed to authorize action.
+                </div>
+                <div class="three">
+                    <div class="role">
+                        <strong>FORECAST</strong>
+                        <br>
+                        <span class="small">What is likely or possible?</span>
+                    </div>
+                    <div class="role">
+                        <strong>RECOMMEND</strong>
+                        <br>
+                        <span class="small">What should be done, given specified goods and burdens?</span>
+                    </div>
+                    <div class="role">
+                        <strong>AUTHORIZE</strong>
+                        <br>
+                        <span class="small">Who may decide or impose the action, under what constraints?</span>
+                    </div>
+                </div>
+                <label for="jump">Name one tempting jump in today's discussion where someone could move too quickly from one layer to another.</label>
+                <textarea id="jump" data-required="true"></textarea>
+                <label for="bridge">What additional bridge/license is required before that move is warranted?</label>
+                <textarea id="bridge" data-required="true"></textarea>
+                <label for="standing">Who has relevant epistemic, relational, operational, or decisional standing—and what kind?</label>
+                <textarea id="standing" data-required="true"></textarea>
+                <div class="instructor-strip">
+                    <strong>Board format:</strong>
+                     write student examples as arrows: 
+                    <em>evidence → claim → recommendation → authorization</em>
+                    . Circle any arrow that needs another premise, value, affected-person input, or authority condition.
+                </div>
+            </section>
+
+            <section id="return">
+                <span class="stepnum">7</span>
+                <div class="phase">Individual return · 7 min</div>
+                <div class="kicker">RETURN — Map B / Authorial Return</div>
+                <h2>Now decide without pretending the model decided for you</h2>
+                <div id="returnSnapshot" class="snapshot hidden"></div>
+                <label for="b_decision">Your recommendation now</label>
+                <select id="b_decision" data-required="true">
+                    <option value="">Choose…</option>
+                    <option>Remain fully open</option>
+                    <option>Close campus</option>
+                    <option>Shift most activity remote / flexible</option>
+                    <option>Delay the decision</option>
+                    <option>Conditional / adaptive plan rather than one fixed option</option>
+                    <option>Still not enough information</option>
+                </select>
+                <label for="b_reason">What now carries the most weight in your reasoning?</label>
+                <textarea id="b_reason" data-required="true"></textarea>
+                <label for="b_change">What changed between Map A and Map B: conclusion, explanation, confidence, task definition, or something else?</label>
+                <textarea id="b_change" data-required="true"></textarea>
+                <div class="two">
+                    <div>
+                        <label for="b_ceiling">Claim ceiling — what can you still not responsibly conclude?</label>
+                        <textarea id="b_ceiling" data-required="true"></textarea>
+                    </div>
+                    <div>
+                        <label for="b_reopen">REOPEN — what new evidence, consequence, or affected-person report would make you revise?</label>
+                        <textarea id="b_reopen" data-required="true"></textarea>
+                    </div>
+                </div>
+                <div class="callout">
+                    <strong>Authorship Check:</strong>
+                     Which of the five checks from the original workbook would most likely reopen your answer—Terrain, Coherence, Gut, Weight, or Capacity?
+                </div>
+                <label for="authorship_return">Choose one and explain why.</label>
+                <textarea id="authorship_return" data-required="true"></textarea>
+            </section>
+
+            <section id="transfer">
+                <span class="stepnum">8</span>
+                <div class="phase">Fast transfer · 5 min</div>
+                <div class="kicker">TRANSFER — The Emergency Grant</div>
+                <h2>Can you carry the architecture without repeating the storm?</h2>
+                <div class="case">A college has a limited emergency-aid fund. A simple model recommends giving smaller grants to more students because that maximizes the number helped. Staff members argue that a few students face eviction or utility shutoff and need much larger grants immediately. The college must decide whether to optimize reach, severity, relational knowledge, or some combination.</div>
+                <label for="transfer_analysis">In 4–6 sentences: build the task, name one computational enhancement, identify the Consequentialism–Care tension, and name one firewall/license before action.</label>
+                <textarea id="transfer_analysis" data-required="true"></textarea>
+                <div class="buttons">
+                    <button id="captureTransferBtn">Capture first pass + reveal self-check</button>
+                    <button class="secondary" id="resetTransferBtn">Reset capture</button>
+                </div>
+                <div id="transferSnapshot" class="snapshot hidden"></div>
+                <div id="selfCheck" class="hidden">
+                    <label class="check">
+                        <input type="checkbox" id="sc1">
+                        Built the task before optimizing
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc2">
+                        Used computation to expand rather than authorize
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc3">
+                        Kept heterogeneous people / burden distribution visible
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc4">
+                        Named a Care relationship or dependency
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" id="sc5">
+                        Placed a firewall between evidence/model and authorization
+                    </label>
+                </div>
+            </section>
+
+            <section id="close">
+                <span class="stepnum">9</span>
+                <div class="phase">Carry forward · 4 min</div>
+                <div class="kicker">CLOSE — Compact the chapter</div>
+                <h2>What did computation add—and what did it not add?</h2>
+                <label for="carry">Complete this in your own words: “Better computation changes ethical reasoning by ___, but it cannot by itself ___.”</label>
+                <textarea id="carry" data-required="true"></textarea>
+                <label for="discussion">One question you think the class still has not settled</label>
+                <textarea id="discussion"></textarea>
+                <div id="validation" class="callout status">Generate the class note when you are ready.</div>
+                <div class="buttons">
+                    <button id="generateBtn">Generate Chapter 7 Class Note</button>
+                    <button class="secondary" id="copyBtn">Copy</button>
+                    <button class="secondary" id="downloadBtn">Download .txt</button>
+                </div>
+                <label for="output">Chapter 7 class note</label>
+                <textarea id="output" class="output" readonly></textarea>
+            </section>
+        </main>
     </div>
-    <aside class="side-card">
-      <h2>What this workbook does</h2>
-      <p><strong>Ethics skill:</strong> Weigh consequences and care as two genuinely different, simultaneous pulls — and test a conclusion before acting on it.</p>
-      <p><strong>Output:</strong> A Chapter 7 Workbook Output Card.</p>
-      <p class="small">Estimated time: 30–40 minutes.</p>
-    </aside>
-  </div>
-</header>
-<div class="wrap grid">
-  <nav aria-label="Workbook progress">
-    <div class="progress-box">
-      <strong>Progress</strong>
-      <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText" class="small">0 of 10 required responses completed.</div>
-      <ol class="toc">
-        <li><a href="#arrive">1. Arrive</a></li>
-        <li><a href="#case">2. Two Answers, Both Right</a></li>
-        <li><a href="#authorship">3. The Authorship Check</a></li>
-        <li><a href="#capacity">4. The Capacity Check, Deepened</a></li>
-        <li><a href="#palmer">5. Tim Palmer</a></li>
-        <li><a href="#farmer">6. Doyne Farmer and Burden Export</a></li>
-        <li><a href="#before">7. Before You Reason It Through</a></li>
-        <li><a href="#apply">8. Run the Authorship Check</a></li>
-        <li><a href="#after">9. After Working Through It</a></li>
-        <li><a href="#revision">10. The Revision Check</a></li>
-        <li><a href="#output">11. Output Card</a></li>
-      </ol>
-      <div class="buttons">
-        <button type="button" class="secondary" id="downloadWorksheet">Download worksheet</button>
-        <button type="button" class="secondary" id="saveBtn">Save now</button>
-        <button type="button" class="danger" id="clearBtn">Clear my responses</button>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <section id="arrive">
-      <div class="section-kicker">1 · Arrive</div>
-      <h2>Two things that are both real</h2>
-      <p>A friend asks you to cover a shift so they can go to a family event. Taking it means you're exhausted for your own commitment tomorrow. Not taking it means they miss something that matters. There's no error here — you're caught between what the outcome will actually be, and what this specific person, right in front of you, needs.</p>
-      <div class="warning"><strong>Privacy:</strong> Section 7 asks about a real Consequences-vs-Care moment in your own life. Use a real one if comfortable, or keep it general.</div>
-      <div class="checkline">
-        <input type="checkbox" id="privacyAck" data-required="true" aria-describedby="privacyAck_error">
-        <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
-      </div>
-      <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
-      <div class="callout" aria-labelledby="guidance-heading">
-        <h3 id="guidance-heading">Before You Start Typing</h3>
-        <p>The boxes in this workbook are graded responses, not a warm-up. A thin answer restates the obvious. A full answer names something specific and traceable, not a general truth that could apply to almost anything.</p>
-        <p>For example: asked why a cake didn't rise, a thin answer says "the oven wasn't hot enough." A full answer says "the recipe called for baking soda, but the box had expired eight months earlier and no longer produced enough gas to lift the batter." Both are about the same length. Only one of them could actually be checked against what happened.</p>
-        <p>Each prompt below has a short note under it naming the specific shortcut a rushed answer tends to take on that exact question. Read it before you write, not after you get your grade back.</p>
-      </div>
-    </section>
-
-    <section id="case">
-      <div class="section-kicker">2 · Two Answers, Both Right</div>
-      <h2>Consequentialism and Care, named precisely</h2>
-      <div class="callout">Consequentialism asks what actually happens to real people as a result of a decision. Care ethics asks what a specific relationship, with a specific person's specific need, requires of you right now. The difficulty isn't that one is mistaken — they're answering different questions, and a single decision only lets you act on one answer at a time.</div>
-      <label for="case_read">Prompt 2.1 — Name the two pulls</label>
-      <p class="hint">Applied to the shift-covering scenario: what does each tradition actually ask, and why aren't you simply confused when you feel both at once?</p>
-      <p class="response-hint" id="case_read_rhint"><strong>Watch for:</strong> copying back the callout's own definitions of Consequentialism and Care without answering the second half of the question — why feeling both pulls at once isn't confusion or indecision. A full answer explains what's actually happening when two genuinely different questions get asked of the same situation at the same time.</p>
-      <textarea id="case_read" data-required="true" aria-describedby="case_read_error case_read_rhint"></textarea>
-      <p class="error-inline" id="case_read_error">This still needs a response.</p>
-    </section>
-
-    <section id="authorship">
-      <div class="section-kicker">3 · The Authorship Check</div>
-      <h2>Five questions, named for the first time</h2>
-      <div class="callout">
-        <strong>Terrain Check:</strong> Does my map of this situation actually match what is really there?<br>
-        <strong>Coherence Check:</strong> Does this conclusion actually fit with the rest of what I believe?<br>
-        <strong>Gut Check:</strong> Does this actually feel right underneath the reasoning — and if not, which one has to give?<br>
-        <strong>Weight Check:</strong> How much does this decision actually matter, at the scale it actually operates at?<br>
-        <strong>Capacity Check:</strong> Given my actual state right now, am I actually capable of doing this well?
-      </div>
-      <label for="authorship_which">Prompt 3.1 — Which question matters most, and why?</label>
-      <p class="hint">These five aren't a checklist to run every time. Most decisions only need one or two. Which one do you find yourself skipping most often, and what does that tend to cost you?</p>
-      <p class="response-hint" id="authorship_which_rhint"><strong>Watch for:</strong> naming a check because it sounds like the responsible answer, rather than the one you're actually, honestly worst at skipping. A full answer names a real, specific cost — an actual outcome you can point to — not a vague "it doesn't go well."</p>
-      <textarea id="authorship_which" data-required="true" aria-describedby="authorship_which_error authorship_which_rhint"></textarea>
-      <p class="error-inline" id="authorship_which_error">This still needs a response.</p>
-    </section>
-
-    <section id="capacity">
-      <div class="section-kicker">4 · The Capacity Check, Deepened</div>
-      <h2>Not "am I too tired" — where does my energy belong?</h2>
-      <p>The Capacity Check, done fully, weighs your full ABCD state — Agency, Beauty and Awe, Context and Contingency, Dynamism — against real constraints of time and energy, "all things considered." A meta-cognitive prosthetic, named here for the first time, is a tool built to help a bounded mind do consciously what it can't do by unaided instinct: weigh all four against each other under real limits.</p>
-      <label for="capacity_deepened">Prompt 4.1 — Apply it to something real right now</label>
-      <p class="hint">Given everything true about your ABCD state right now, what is actually the wisest use of your next hour of real capacity?</p>
-      <p class="response-hint" id="capacity_deepened_rhint"><strong>Watch for:</strong> naming a task just because it's due or overdue, without actually weighing it against your real current state — your energy, your context, whether this hour genuinely suits that kind of work. A full answer shows the weighing itself, not just the conclusion it landed on.</p>
-      <textarea id="capacity_deepened" data-required="true" aria-describedby="capacity_deepened_error capacity_deepened_rhint"></textarea>
-      <p class="error-inline" id="capacity_deepened_error">This still needs a response.</p>
-    </section>
-
-    <section id="palmer">
-      <div class="section-kicker">5 · Tim Palmer</div>
-      <h2>The ethics of uncertainty</h2>
-      <div class="casebox">
-        <p>Tim Palmer helped build ensemble forecasting: running dozens of atmospheric models with slightly varied starting conditions and reporting the full distribution, rather than one confident-sounding line. "Rain: 40 percent" is a forecast you can actually use. A forecast that quietly rounds 40 percent down to "no rain" is not more confident — it's less honest, and it has a body count.</p>
-      </div>
-      <label for="palmer_apply">Prompt 5.1 — Why is false certainty a moral choice?</label>
-      <p class="hint">Why does presenting a single-track forecast as certain count as a moral choice, not just a neutral technical shortcut?</p>
-      <p class="response-hint" id="palmer_apply_rhint"><strong>Watch for:</strong> saying "because it could be wrong" — every forecast could be wrong, so that alone doesn't make the choice moral rather than technical. A full answer names what the person receiving the flattened forecast loses the ability to do, and why that loss carries real consequences for them.</p>
-      <textarea id="palmer_apply" data-required="true" aria-describedby="palmer_apply_error palmer_apply_rhint"></textarea>
-      <p class="error-inline" id="palmer_apply_error">This still needs a response.</p>
-    </section>
-
-    <section id="farmer">
-      <div class="section-kicker">6 · Doyne Farmer and Burden Export</div>
-      <h2>What the average person can't see</h2>
-      <div class="casebox">
-        <p>Standard economic models relied on a "representative agent" — one idealized person standing in for an entire economy. A lockdown's effect on a representative agent is smooth. Its real effect on a restaurant worker, a remote engineer, a nurse, and a family without savings is entirely different — and the people who fall furthest from the average are the ones the model can't see at all.</p>
-      </div>
-      <div class="callout"><strong>Burden Export:</strong> what happens when a system becomes more efficient specifically by transferring its own cost onto people it does not track — often a sign of success by the system's own metrics, not failure.</div>
-      <label for="farmer_apply">Prompt 6.1 — Find a real example of Burden Export</label>
-      <p class="hint">Name a real or plausible case where something looks efficient specifically because its real cost has been pushed onto people the accounting doesn't track.</p>
-      <p class="response-hint" id="farmer_apply_rhint"><strong>Watch for:</strong> naming something you simply think is unfair, without showing the specific mechanism — a metric that looks good precisely because the people paying the real cost aren't in the data it measures. A full answer names both the metric that looks efficient and who falls outside what it counts.</p>
-      <textarea id="farmer_apply" data-required="true" aria-describedby="farmer_apply_error farmer_apply_rhint"></textarea>
-      <p class="error-inline" id="farmer_apply_error">This still needs a response.</p>
-    </section>
-
-    <section id="before">
-      <div class="section-kicker">7 · Before You Reason It Through</div>
-      <h2>A real Consequences-vs-Care moment</h2>
-      <div class="stop-box">
-        <p><strong class="stop-label">Stop — write before continuing</strong></p>
-        <p>Recall a real decision where consequences and care genuinely pulled in different directions, the way the shift-covering scene does. Write your honest first reaction to which one you leaned toward, before reasoning it through. Once you move on, don't come back and revise this.</p>
-      </div>
-      <label for="moment_first">Prompt 7.1 — Your moment and first reaction</label>
-      <p class="response-hint" id="moment_first_rhint"><strong>Watch for:</strong> describing a decision where you clearly only ever felt one pull, rather than a moment where consequences and care genuinely pulled you in different directions. And if you've already justified your choice, that's not a first reaction — write which way you leaned before you defend it.</p>
-      <textarea id="moment_first" data-required="true" aria-describedby="moment_first_error moment_first_rhint"></textarea>
-      <p class="error-inline" id="moment_first_error">This still needs a response.</p>
-    </section>
-
-    <section id="apply">
-      <div class="section-kicker">8 · Run the Authorship Check</div>
-      <h2>Apply it to your own moment</h2>
-      <label for="apply_check">Prompt 8.1 — Run the Weight Check and the Gut Check</label>
-      <p class="hint">On the moment you named: how much did this decision actually matter, at the scale it actually operated at — and did your gut agree with your reasoning, or disagree?</p>
-      <p class="response-hint" id="apply_check_rhint"><strong>Watch for:</strong> answering only one of the two checks — usually the Weight Check — and skipping whether your gut actually agreed with your reasoning at the time. A full answer addresses both, even if the honest answer is that they disagreed.</p>
-      <textarea id="apply_check" data-required="true" aria-describedby="apply_check_error apply_check_rhint"></textarea>
-      <p class="error-inline" id="apply_check_error">This still needs a response.</p>
-    </section>
-
-    <section id="after">
-      <div class="section-kicker">9 · After Working Through It</div>
-      <h2>Your final answer</h2>
-      <div class="stop-box">
-        <p><strong class="stop-label">Stop — write before continuing</strong></p>
-        <p>Looking back, do you think you acted on the right pull? What would the Weight Check have told you about how much this decision actually mattered?</p>
-      </div>
-      <label for="moment_final">Prompt 9.1 — Your final answer</label>
-      <p class="response-hint" id="moment_final_rhint"><strong>Watch for:</strong> answering with how you feel about your choice now — good or bad — instead of what the Weight Check specifically would have told you about scale. A full answer runs that check rather than substituting a feeling for it.</p>
-      <textarea id="moment_final" data-required="true" aria-describedby="moment_final_error moment_final_rhint"></textarea>
-      <p class="error-inline" id="moment_final_error">This still needs a response.</p>
-    </section>
-
-    <section id="revision">
-      <div class="section-kicker">10 · The Revision Check</div>
-      <h2>What actually changed?</h2>
-      <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
-      <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
-      <p class="response-hint" id="revision_check_rhint"><strong>Watch for:</strong> writing "nothing changed" and stopping there. That's an allowed outcome, but only when you explain specifically why your first reaction survived being tested against the Authorship Check, not just assert that it did.</p>
-      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error revision_check_rhint"></textarea>
-      <p class="error-inline" id="revision_check_error">This still needs a response.</p>
-      <div class="checkline">
-        <input type="checkbox" id="journalRef">
-        <div><label for="journalRef">Optional: I explored this further in my Personal Ethics Journal.</label>
-        <span class="zero-credit">No description needed. This box is never worth points, in either direction.</span></div>
-      </div>
-    </section>
-
-    <section id="output">
-      <div class="section-kicker">11 · Output Card</div>
-      <h2>Chapter 7 Workbook Output Card</h2>
-      <div class="error-summary" id="errorSummary" tabindex="-1">
-        <h3>Please complete these items before creating the Output Card</h3>
-        <ul id="errorList"></ul>
-      </div>
-      <div class="buttons">
-        <button type="button" id="generateBtn">Generate Output Card</button>
-        <button type="button" class="secondary" id="copyBtn">Copy Output Card</button>
-        <button type="button" class="secondary" id="downloadBtn">Download Output Card</button>
-      </div>
-      <label for="outputText">Output Card</label>
-      <textarea id="outputText" readonly></textarea>
-      <div id="completeMsg" class="success" hidden>You've completed the Chapter 7 workbook — the real Authorship Check, Palmer and Farmer applied precisely, and an honest process trail through your own Consequences-vs-Care moment.</div>
-    </section>
-  </main>
-</div>
-<footer>Chapter 7 Workbook v2.1 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
-<script>
-(function() {
-  'use strict';
-  const STORAGE_KEY = 'ch7_workbook_v2_consequences_care';
-  const requiredFields = Array.from(document.querySelectorAll('[data-required="true"]'));
-  const allFields = Array.from(document.querySelectorAll('textarea, select, input[type="checkbox"]'));
-  const barFill = document.getElementById('barFill');
-  const progressText = document.getElementById('progressText');
-  const outputText = document.getElementById('outputText');
-  const completeMsg = document.getElementById('completeMsg');
-  const errorSummary = document.getElementById('errorSummary');
-  const errorList = document.getElementById('errorList');
-  const journalRef = document.getElementById('journalRef');
-
-  function isFilled(el) { if (el.type === 'checkbox') return el.checked; return (el.value || '').trim().length > 0; }
-  function valueOf(id) { const el = document.getElementById(id); if (!el) return ''; return el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : (el.value || '').trim(); }
-  function labelFor(id) { const l = document.querySelector('label[for="'+id+'"]'); return l ? l.textContent.replace(/\s+/g,' ').trim() : id; }
-
-  function collect() {
-    const data = {};
-    allFields.forEach(el => { data[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
-    data.savedAt = new Date().toISOString();
-    return data;
-  }
-  function saveDraft() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(collect())); } catch(e) { console.warn('Could not save draft', e); } }
-  function loadDraft() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw);
-      allFields.forEach(el => {
-        if (!(el.id in data)) return;
-        if (el.type === 'checkbox') el.checked = Boolean(data[el.id]);
-        else el.value = data[el.id];
-      });
-    } catch(e) { console.warn('Could not load draft', e); }
-  }
-  function updateProgress() {
-    const done = requiredFields.filter(isFilled).length;
-    const total = requiredFields.length;
-    const pct = total ? Math.round((done/total)*100) : 0;
-    barFill.style.width = pct + '%';
-    progressText.textContent = done + ' of ' + total + ' required responses completed.';
-    return { done, total };
-  }
-  function clearErrors() {
-    errorList.innerHTML = ''; errorSummary.style.display = 'none';
-    requiredFields.forEach(el => { el.setAttribute('aria-invalid','false'); const e=document.getElementById(el.id+'_error'); if(e) e.style.display='none'; });
-  }
-  function validate() {
-    clearErrors();
-    const missing = requiredFields.filter(el => !isFilled(el));
-    if (missing.length) {
-      missing.forEach(el => {
-        el.setAttribute('aria-invalid','true');
-        const e = document.getElementById(el.id+'_error'); if(e) e.style.display='block';
-        const li = document.createElement('li'); const a = document.createElement('a');
-        a.href = '#' + el.id; a.textContent = labelFor(el.id); li.appendChild(a); errorList.appendChild(li);
-      });
-      errorSummary.style.display = 'block'; errorSummary.focus();
-      return false;
-    }
-    return true;
-  }
-  function line(label, value) { return label + '\n' + (value || '[not completed]') + '\n'; }
-  function buildOutput() {
-    return [
-      'Chapter 7 Workbook Output Card — Consequences, Care',
-      '',
-      line('Two answers, both right — the two pulls named:', valueOf('case_read')),
-      line('The Authorship Check — which question matters most:', valueOf('authorship_which')),
-      line('The Capacity Check, deepened:', valueOf('capacity_deepened')),
-      line('Palmer — why false certainty is a moral choice:', valueOf('palmer_apply')),
-      line('Farmer / Burden Export — a real example:', valueOf('farmer_apply')),
-      '',
-      line('Before you reason it through — your moment and first reaction:', valueOf('moment_first')),
-      line('Running the Authorship Check on your own moment:', valueOf('apply_check')),
-      line('After working through it — your final answer:', valueOf('moment_final')),
-      line('The Revision Check — what actually changed:', valueOf('revision_check')),
-      '',
-      'Optional Journal reference: ' + (journalRef.checked ? 'Yes' : 'No')
-    ].join('\n');
-  }
-  function download(filename, text) {
-    const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = filename;
-    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-  }
-  function worksheetText() {
-    return [
-      'Chapter 7 Workbook Worksheet v2.1 — Consequences, Care',
-      '',
-      'The shift-covering scene: a friend asks you to cover a shift so they can go to a family event.',
-      '',
-      '1. Two answers, both right — what does Consequentialism ask, and what does Care ethics ask?',
-      '',
-      '2. The Authorship Check — Terrain, Coherence, Gut, Weight, Capacity. Which do you skip most often, and what does that cost you?',
-      '',
-      '3. The Capacity Check, deepened — given your ABCD state right now, what is the wisest use of your next hour?',
-      '',
-      '4. Palmer — why is presenting false certainty a moral choice, not a neutral shortcut?',
-      '',
-      '5. Farmer / Burden Export — name a real case where efficiency hides a cost pushed onto untracked people.',
-      '',
-      '6. STOP — before continuing: name a real Consequences-vs-Care moment in your own life, and your honest first reaction. Do not revise this after moving on.',
-      '',
-      '7. Run the Weight Check and Gut Check on your own moment.',
-      '',
-      '8. STOP — after working through it: your final answer.',
-      '',
-      '9. Revision Check — what specifically changed? If nothing changed, say so honestly.',
-      '',
-      'Optional: note here if you explored this further in your Personal Ethics Journal (not graded).'
-    ].join('\n');
-  }
-  document.addEventListener('input', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
-  document.addEventListener('change', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
-  document.getElementById('saveBtn').addEventListener('click', () => { saveDraft(); alert('Draft saved in this browser.'); });
-  document.getElementById('clearBtn').addEventListener('click', () => {
-    if (!confirm('Clear this saved Chapter 7 draft from this browser?')) return;
-    localStorage.removeItem(STORAGE_KEY);
-    allFields.forEach(el => { if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
-    outputText.value = ''; completeMsg.hidden = true; clearErrors(); updateProgress();
-  });
-  document.getElementById('generateBtn').addEventListener('click', () => {
-    if (!validate()) return;
-    outputText.value = buildOutput();
-    completeMsg.hidden = false;
-    saveDraft();
-  });
-  document.getElementById('copyBtn').addEventListener('click', async () => {
-    if (!outputText.value.trim()) outputText.value = buildOutput();
-    try { await navigator.clipboard.writeText(outputText.value); alert('Output Card copied.'); }
-    catch(e) { outputText.select(); document.execCommand('copy'); alert('Output Card selected/copied.'); }
-  });
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    if (!outputText.value.trim()) outputText.value = buildOutput();
-    download('chapter_7_output_card.txt', outputText.value);
-  });
-  document.getElementById('downloadWorksheet').addEventListener('click', () => {
-    download('chapter_7_workbook_worksheet.txt', worksheetText());
-  });
-  loadDraft();
-  updateProgress();
-}());
-</script>
+    <footer>ECT Chapter 7 v3 · Doing, Consequences & Care · local-only classroom conversation lab · computation expands the map; human authorship remains</footer>
+    <script>
+    (() => {
+        'use strict';
+        const KEY = 'ect_ch7_v3_doing_consequences_care',
+            SNAP = 'ect_ch7_v3_mapa',
+            XSNAP = 'ect_ch7_v3_transfer';
+        const qa = s => [...document.querySelectorAll(s)],
+            el = id => document.getElementById(id);
+        const fields = qa('textarea,select,input[type=checkbox]'),
+            required = qa('[data-required="true"]');
+        const val = id => {
+            const e = el(id);
+            if (!e)
+                return '';
+            return e.type === 'checkbox' ? (e.checked ? 'Yes' : 'No') : (e.value || '').trim()
+        };
+        const filled = e => e.type === 'checkbox' ? e.checked : (e.value || '').trim().length > 0;
+        function collect() {
+            const d = {};
+            fields.forEach(e => d[e.id] = e.type === 'checkbox' ? e.checked : e.value);
+            d.workMode = el('workMode').value;
+            d.savedAt = new Date().toISOString();
+            return d
+        }
+        function save() {
+            try {
+                localStorage.setItem(KEY, JSON.stringify(collect()))
+            } catch (e) {}
+            progress()
+        }
+        function load() {
+            try {
+                const d = JSON.parse(localStorage.getItem(KEY) || '{}');
+                fields.forEach(e => {
+                    if (e.id in d) {
+                        if (e.type === 'checkbox')
+                            e.checked = !!d[e.id];
+                        else
+                            e.value = d[e.id]
+                    }
+                });
+                if (d.workMode)
+                    el('workMode').value = d.workMode
+            } catch (e) {}
+            loadMapA();
+            loadTransfer();
+            mode();
+            progress()
+        }
+        function progress() {
+            const done = required.filter(filled).length,
+                pct = required.length ? Math.round(done / required.length * 100) : 0;
+            el('barFill').style.width = pct + '%';
+            el('progressText').textContent = `${done} of ${required.length} core responses completed.`
+        }
+        function mode() {
+            const g = el('workMode').value === 'group';
+            el('modeNote').textContent = g ? 'Group rule: preserve disagreement. Suggested roles are Mapper, Challenger, License-keeper, and Reporter. Everyone still writes their own Map A and Map B.' : 'Solo rule: at each conversation step, construct the strongest reasonable countermap you can. Do not invent an easy opponent.';
+            el('roleNote').textContent = g ? 'Assign or rotate the roles. A group answer may record several positions; consensus is not required.' : 'Do all three roles yourself: state your map, challenge it, then ask what the evidence actually licenses.';
+            try {
+                const d = JSON.parse(localStorage.getItem(KEY) || '{}');
+                d.workMode = el('workMode').value;
+                localStorage.setItem(KEY, JSON.stringify(d))
+            } catch (e) {}
+        }
+        function mapAIds() {
+            return ['a_decision', 'a_reason', 'a_consequence', 'a_care', 'a_unknown']
+        }
+        function mapAText(s) {
+            return `MAP A — preserved ${s.when}\n\nRecommendation: ${s.a_decision || ''}\nStrongest reason: ${s.a_reason || ''}\nMost salient consequence: ${s.a_consequence || ''}\nMost salient care/relationship: ${s.a_care || ''}\nNeed to know: ${s.a_unknown || ''}`
+        }
+        function loadMapA() {
+            try {
+                const s = JSON.parse(localStorage.getItem(SNAP) || 'null');
+                if (!s)
+                    return;
+                mapAIds().forEach(id => el(id).disabled = true);
+                el('mapAStatus').textContent = 'Map A preserved';
+                el('mapAStatus').className = 'success';
+                ['snapshotA', 'returnSnapshot'].forEach(id => {
+                    el(id).textContent = mapAText(s);
+                    el(id).classList.remove('hidden')
+                })
+            } catch (e) {}
+        }
+        function loadTransfer() {
+            try {
+                const s = JSON.parse(localStorage.getItem(XSNAP) || 'null');
+                if (!s)
+                    return;
+                el('transfer_analysis').disabled = true;
+                el('transferSnapshot').textContent = `TRANSFER FIRST PASS — ${s.when}\n\n${s.text}`;
+                el('transferSnapshot').classList.remove('hidden');
+                el('selfCheck').classList.remove('hidden')
+            } catch (e) {}
+        }
+        qa('textarea,select,input').forEach(e => {
+            e.addEventListener('input', save);
+            e.addEventListener('change', save)
+        });
+        el('workMode').addEventListener('change', mode);
+        el('sealBtn').onclick = () => {
+            const ids = mapAIds();
+            if (ids.some(id => !val(id))) {
+                alert('Complete the first-map fields before preserving Map A.');
+                return
+            }
+            const s = {
+                when: new Date().toLocaleString()
+            };
+            ids.forEach(id => s[id] = val(id));
+            try {
+                localStorage.setItem(SNAP, JSON.stringify(s))
+            } catch (e) {}
+            save();
+            loadMapA()
+        };
+        el('unsealBtn').onclick = () => {
+            if (!confirm('Reset Map A only for a technical or accidental entry error?'))
+                return;
+            localStorage.removeItem(SNAP);
+            mapAIds().forEach(id => el(id).disabled = false);
+            ['snapshotA', 'returnSnapshot'].forEach(id => el(id).classList.add('hidden'));
+            el('mapAStatus').textContent = 'Map A not yet preserved';
+            el('mapAStatus').className = 'warning'
+        };
+        el('captureTransferBtn').onclick = () => {
+            if (!val('transfer_analysis')) {
+                alert('Write the transfer first pass before opening the self-check.');
+                return
+            }
+            const s = {
+                when: new Date().toLocaleString(),
+                text: val('transfer_analysis')
+            };
+            try {
+                localStorage.setItem(XSNAP, JSON.stringify(s))
+            } catch (e) {}
+            save();
+            loadTransfer()
+        };
+        el('resetTransferBtn').onclick = () => {
+            if (!confirm('Reset the captured transfer first pass?'))
+                return;
+            localStorage.removeItem(XSNAP);
+            el('transfer_analysis').disabled = false;
+            el('transferSnapshot').classList.add('hidden');
+            el('selfCheck').classList.add('hidden')
+        };
+        function section(title, pairs) {
+            let x = `\n${title}\n${'='.repeat(title.length)}\n`;
+            pairs.forEach(([a, b]) => x += `${a}:\n${b || '[not completed]'}\n\n`);
+            return x
+        }
+        function output() {
+            let s = null;
+            try {
+                s = JSON.parse(localStorage.getItem(SNAP) || 'null')
+            } catch (e) {}
+            let o = 'ECT CHAPTER 7 CLASS NOTE — DOING, CONSEQUENCES & CARE\n';
+            o += section('MAP A', [['Preserved first map', s ? mapAText(s) : '[not preserved]']]);
+            o += section('TASK BUILDING', [['Too-thin task', val('task_bad')], ['Better task', val('task_better')], ['Still missing', val('task_missing')]]);
+            o += section('PALMER / ENSEMBLE THINKING', [['What the ensemble added', val('palmer_gain')], ['What it could not decide', val('palmer_limit')], ['Position movement', val('palmer_move')]]);
+            o += section('FARMER / HETEROGENEITY', [['What the representative agent hid', val('farmer_hidden')], ['Burden export', val('farmer_burden')], ['Position movement', val('farmer_move')]]);
+            o += section('CARE + DOING', [['Relationship/responsibility', val('care_relation')], ['Consequentialism–Care conflict', val('care_conflict')], ['What should remain protected', val('care_invariant')]]);
+            o += section('EHI LICENSING', [['Tempting jump', val('jump')], ['Bridge/license needed', val('bridge')], ['Standing', val('standing')]]);
+            o += section('MAP B / AUTHORIAL RETURN', [['Recommendation now', val('b_decision')], ['What carries most weight', val('b_reason')], ['What changed', val('b_change')], ['Claim ceiling', val('b_ceiling')], ['REOPEN condition', val('b_reopen')], ['Authorship Check', val('authorship_return')]]);
+            o += section('TRANSFER', [['Emergency-aid first pass', val('transfer_analysis')]]);
+            o += section('CARRY FORWARD', [['Compact sentence', val('carry')], ['Still-open class question', val('discussion')]]);
+            return o
+        }
+        el('generateBtn').onclick = () => {
+            const missing = required.filter(e => !filled(e));
+            el('validation').textContent = missing.length ? `Draft generated, but ${missing.length} core response(s) are still incomplete.` : 'Core class-lab responses complete. Your remaining uncertainty belongs in the REOPEN condition, not hidden by a completion check.';
+            el('output').value = output();
+            save()
+        };
+        el('copyBtn').onclick = async () => {
+            if (!el('output').value)
+                el('output').value = output();
+            try {
+                await navigator.clipboard.writeText(el('output').value);
+                alert('Chapter 7 class note copied.')
+            } catch (e) {
+                el('output').select();
+                document.execCommand('copy')
+            }
+        };
+        el('downloadBtn').onclick = () => {
+            if (!el('output').value)
+                el('output').value = output();
+            const b = new Blob([el('output').value], {
+                    type: 'text/plain;charset=utf-8'
+                }),
+                u = URL.createObjectURL(b),
+                a = document.createElement('a');
+            a.href = u;
+            a.download = 'ECT_CH7_v3_Doing_Consequences_Care_Class_Note.txt';
+            a.click();
+            URL.revokeObjectURL(u)
+        };
+        el('saveBtn').onclick = () => {
+            save();
+            alert('Saved in this browser.')
+        };
+        el('clearBtn').onclick = () => {
+            if (confirm('Clear all Chapter 7 v3 work saved in this browser?')) {
+                localStorage.removeItem(KEY);
+                localStorage.removeItem(SNAP);
+                localStorage.removeItem(XSNAP);
+                location.reload()
+            }
+        };
+        load();
+    })();
+    </script>
 </body>
 </html>
